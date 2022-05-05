@@ -36,7 +36,7 @@ public class Filter45 implements Filter {
             chain.doFilter(request, response);
             long stopTime = System.currentTimeMillis();
             long queryTime = stopTime - startTime;
-
+            
             Request newRequest = new Request();
             newRequest.setUserAgent(userAgent);
             newRequest.setQueryDateTime(queryDateTime);

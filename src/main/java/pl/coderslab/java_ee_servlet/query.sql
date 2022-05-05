@@ -15,9 +15,17 @@ CREATE TABLE requests (
                           queryTime VARCHAR(255)
 );
 
+drop table requestsParams;
+
 create table requestsParams (
-                                id INT NOT NULL,
+                                id INT NOT NULL PRIMARY KEY auto_increment,
+                                request_id INT NOT NULL,
                                 paramName VARCHAR(255),
                                 paramValue VARCHAR(255),
-                                foreign key (id) references requests(id)
+                                foreign key (request_id) references requests(id)
 );
+
+show tables;
+select * from requestsParams;
+Delete from requestsParams where id=15
+select * from requests;

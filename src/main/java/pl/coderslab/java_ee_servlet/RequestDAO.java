@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class RequestDAO {
     private static final String CREATE_REQUEST_QUERY = "INSERT INTO requests (userAgent,queryDateTime,queryTime) VALUES(?,?,?);";
-    private static final String CREATE_REQUEST_PARAMS_QUERY = "INSERT INTO requestsParams(id, paramName, paramValue) VALUES(?,?,?);";
+    private static final String CREATE_REQUEST_PARAMS_QUERY = "INSERT INTO requestsParams(request_id, paramName, paramValue) VALUES(?,?,?);";
 
     public static Request createRequest(Request newRequest) {
         try (Connection conn = DbUtil.getConnection()) {
